@@ -1,16 +1,3 @@
-anagement:
-  endpoints:
-    web.base-path: /internal/
-    web.exposure.include: health,info,prometheus
-    health.show-details: always
-  health:
-    diskspace.enabled: true
-  endpoint:
-    health:
-      show-details: always
-
-server.servlet.context-path: /${spring.application.name}
-
 spring:
   datasource:
     driver-class-name: org.h2.Driver
@@ -24,3 +11,4 @@ spring:
     open-in-view: false
   application:
     name: backend-challenge
+server.servlet.context-path: /${spring.application.name}
