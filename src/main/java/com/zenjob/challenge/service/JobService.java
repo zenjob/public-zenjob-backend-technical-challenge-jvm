@@ -29,15 +29,16 @@ public class JobService {
                 .companyId(UUID.randomUUID())
                 .startTime(date1.atTime(8, 0, 0).toInstant(ZoneOffset.UTC))
                 .endTime(date2.atTime(17, 0, 0).toInstant(ZoneOffset.UTC))
-                .shifts(LongStream.range(0, ChronoUnit.DAYS.between(date1, date2))
-                        .mapToObj(idx -> date1.plus(idx, ChronoUnit.DAYS))
-                        .map(date -> Shift.builder()
-                                .id(UUID.randomUUID())
-                                .startTime(date.atTime(8, 0, 0).toInstant(ZoneOffset.UTC))
-                                .endTime(date.atTime(17, 0, 0).toInstant(ZoneOffset.UTC))
-                                .build())
-                        .collect(Collectors.toList()))
                 .build();
+        job.setShifts(LongStream.range(0, ChronoUnit.DAYS.between(date1, date2))
+                .mapToObj(idx -> date1.plus(idx, ChronoUnit.DAYS))
+                .map(date -> Shift.builder()
+                        .id(UUID.randomUUID())
+                        .job(job)
+                        .startTime(date.atTime(8, 0, 0).toInstant(ZoneOffset.UTC))
+                        .endTime(date.atTime(17, 0, 0).toInstant(ZoneOffset.UTC))
+                        .build())
+                .collect(Collectors.toList()));
         return jobRepository.save(job);
     }
 
