@@ -1,0 +1,26 @@
+anagement:
+  endpoints:
+    web.base-path: /internal/
+    web.exposure.include: health,info,prometheus
+    health.show-details: always
+  health:
+    diskspace.enabled: true
+  endpoint:
+    health:
+      show-details: always
+
+server.servlet.context-path: /${spring.application.name}
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:zenjob
+    username: zenjob
+    password: challenge
+  jpa:
+    properties.hibernate.jdbc.lob.non_contextual_creation: true
+    hibernate.ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+  application:
+    name: backend-challenge

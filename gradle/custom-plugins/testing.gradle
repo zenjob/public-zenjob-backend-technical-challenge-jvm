@@ -1,0 +1,27 @@
+apply plugin: 'com.adarshr.test-logger'
+
+test {
+    useJUnitPlatform {
+        excludeTags 'integration-test'
+    }
+    testLogging {
+        testlogger {
+            theme 'standard'
+        }
+    }
+}
+
+// ====== integration tests config
+task integrationTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'integration-test'
+    }
+    testLogging {
+        testlogger {
+            theme 'standard'
+            slowThreshold 1000
+        }
+    }
+    check.dependsOn it
+    shouldRunAfter test
+}
