@@ -1,6 +1,6 @@
 # Zenjob Coding Challenge
 
-This is a __coding challenge__ intended for __backend engineers__. It holds __three different tasks__, with an additional __stretch goal__ if you are feeling adventurous. For finishing the main task with some documentation, you should not need to invest more than __3 hours__. If you want to take a shot at the stretch goal as well, it may take longer than that. 
+This is a coding challenge intended for backend engineers. It holds three different tasks, with an additional stretch goal if you are feeling adventurous. For finishing the main task with some documentation, you should not need to invest more than __3 hours__. If you want to take a shot at the stretch goal as well, it may take longer than that. 
 
 ## What this is about
 This repository consists of a simplified version of Zenjob's platform, which allows __companies__ to order __jobs__ consisting of __shifts__ that __talents__ (workers) can be booked for.
