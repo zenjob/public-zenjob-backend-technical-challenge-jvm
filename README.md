@@ -1,6 +1,6 @@
 # Zenjob Coding Challenge
 
-This is a coding challenge intended for backend engineers. It holds two different tasks. For finishing the main tasks with some documentation, you should not need to invest more than __2 hours__.
+This is a coding challenge intended for backend engineers. It holds three different tasks. For finishing the main tasks with some documentation, you should not need to invest more than __2 hours__.
 
 ## What this is about
 This repository consists of a simplified version of Zenjob's platform, which allows __companies__ to order __jobs__ consisting of __shifts__ that __talents__ (workers) can be booked for.
@@ -31,3 +31,8 @@ I want to be able to cancel a job I ordered previously
 ### Task B
 **AS** a Company
 I want to be able to cancel a single shift of a job I ordered previously
+
+### Task C
+**AS** a Company
+ I want to be able to cancel all shifts booked for a specific talent
+ **AND** if the shifts are cancelled there has to be a new shifts created as a substitute with a new talent
