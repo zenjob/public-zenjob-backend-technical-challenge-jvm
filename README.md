@@ -35,4 +35,4 @@ I want to be able to cancel a single shift of a job I ordered previously
 ### Task C
 **AS** a Company
  I want to be able to cancel all shifts booked for a specific talent
- **AND** if the shifts are cancelled there has to be a new shifts created as a substitute with a new talent
+ **AND** if the shifts are cancelled there has to be new shifts created as substitutes
