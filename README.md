@@ -1,6 +1,6 @@
 # Zenjob Coding Challenge
 
-This is a **coding challenge** intended for **backend** or **full-stacks** engineers, containing **three different tasks**. For finishing these tasks with some documentation, you should not need to invest more than **2 hours**.
+This is a **backend coding challenge**, containing **three different tasks**. For finishing these tasks with some documentation, you should not need to invest more than **2 hours**.
 
 ## Introduction
 
