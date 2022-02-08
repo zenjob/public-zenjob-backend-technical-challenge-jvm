@@ -61,9 +61,9 @@ Your submission will be evaluated by at least 2 people on the following criteria
 - API design
 - Documentation
 - Completeness of tasks
+- Solution design
 - Bugs
 - Tests
-- Best practices
 - Code styling
 
 ## Final notes
