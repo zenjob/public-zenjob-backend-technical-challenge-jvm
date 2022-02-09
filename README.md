@@ -58,12 +58,10 @@ Your job is to modify the existing service so it satisfies the following require
 
 Your submission will be evaluated by at least 2 people on the following criteria:
 
+- Completeness
 - API design
-- Documentation
-- Completeness of tasks
-- Solution design
-- Bugs
 - Tests
+- Solution design
 - Code styling
 
 ## Final notes
