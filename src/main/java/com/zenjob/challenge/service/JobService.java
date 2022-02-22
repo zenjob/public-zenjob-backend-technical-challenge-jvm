@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
@@ -23,7 +24,10 @@ public class JobService {
     private final JobRepository   jobRepository;
     private final ShiftRepository shiftRepository;
 
-    public Job createJob(UUID uuid, UUID companyId, LocalDate date1, LocalDate date2) {
+    public Job createJob(UUID uuid, UUID companyId, LocalDate date1, LocalDate date2) throws DateTimeException {
+        if (ChronoUnit.DAYS.between(date1, date2) < 1) {
+            throw new DateTimeException("End date must be at least 1 day after start date.");
+        }
         Job job = Job.builder()
                 .id(uuid)
                 .companyId(companyId)
