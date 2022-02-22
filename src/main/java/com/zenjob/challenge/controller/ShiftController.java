@@ -36,7 +36,7 @@ public class ShiftController {
                         .id(uuid)
                         .talentId(shift.getTalentId())
                         .jobId(shift.getJob().getId())
-                        .start(shift.getCreatedAt())
+                        .start(shift.getStartTime())
                         .end(shift.getEndTime())
                         .build())
                 .collect(Collectors.toList());
