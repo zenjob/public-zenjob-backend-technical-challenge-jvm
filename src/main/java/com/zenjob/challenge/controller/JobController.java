@@ -29,7 +29,7 @@ public class JobController {
     @PostMapping
     @ResponseBody
     public ResponseDto<RequestJobResponse> requestJob(@RequestBody @Valid RequestJobRequestDto dto) {
-        Job job = jobService.createJob(UUID.randomUUID(), dto.start, dto.end);
+        Job job = jobService.createJob(UUID.randomUUID(), dto.companyId, dto.start, dto.end);
         return ResponseDto.<RequestJobResponse>builder()
                 .data(RequestJobResponse.builder()
                         .jobId(job.getId())

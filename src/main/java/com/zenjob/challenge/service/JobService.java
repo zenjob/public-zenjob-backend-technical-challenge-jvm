@@ -23,10 +23,10 @@ public class JobService {
     private final JobRepository   jobRepository;
     private final ShiftRepository shiftRepository;
 
-    public Job createJob(UUID uuid, LocalDate date1, LocalDate date2) {
+    public Job createJob(UUID uuid, UUID companyId, LocalDate date1, LocalDate date2) {
         Job job = Job.builder()
                 .id(uuid)
-                .companyId(UUID.randomUUID())
+                .companyId(companyId)
                 .startTime(date1.atTime(8, 0, 0).toInstant(ZoneOffset.UTC))
                 .endTime(date2.atTime(17, 0, 0).toInstant(ZoneOffset.UTC))
                 .build();
