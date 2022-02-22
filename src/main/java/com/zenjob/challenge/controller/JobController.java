@@ -8,13 +8,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
@@ -22,7 +20,9 @@ import javax.validation.constraints.NotNull;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(path = "/job")
@@ -45,6 +45,21 @@ public class JobController {
         }
     }
 
+    @DeleteMapping(path = "/{jobId}")
+    @ResponseBody
+    public ResponseDto<DeleteJobResponse> cancelJob(@PathVariable("jobId") UUID uuid) {
+        try {
+            jobService.cancelJob(uuid);
+            return ResponseDto.<DeleteJobResponse>builder()
+                    .data(DeleteJobResponse.builder()
+                            .jobId(uuid)
+                            .build())
+                    .build();
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Job id not found.");
+        }
+    }
+
     @NoArgsConstructor
     @AllArgsConstructor
     @Data
@@ -62,6 +77,12 @@ public class JobController {
     @Builder
     @Data
     private static class RequestJobResponse {
+        UUID jobId;
+    }
+
+    @Builder
+    @Data
+    private static class DeleteJobResponse {
         UUID jobId;
     }
 }

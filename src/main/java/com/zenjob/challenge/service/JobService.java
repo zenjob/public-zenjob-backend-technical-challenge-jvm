@@ -56,4 +56,9 @@ public class JobService {
     public void bookTalent(UUID talent, UUID shiftId) {
         shiftRepository.findById(shiftId).map(shift -> shiftRepository.save(shift.setTalentId(talent)));
     }
+
+    public void cancelJob(UUID uuid) {
+        shiftRepository.deleteAllByJob_Id(uuid);
+        jobRepository.deleteById(uuid);
+    }
 }
