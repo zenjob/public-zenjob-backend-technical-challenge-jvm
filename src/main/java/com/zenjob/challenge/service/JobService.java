@@ -27,7 +27,7 @@ public class JobService {
         Job job = Job.builder()
                 .id(uuid)
                 .companyId(companyId)
-                .startTime(date1.atTime(8, 0, 0).toInstant(ZoneOffset.UTC))
+                .startTime(date1.atTime(9, 0, 0).toInstant(ZoneOffset.UTC))
                 .endTime(date2.atTime(17, 0, 0).toInstant(ZoneOffset.UTC))
                 .build();
         job.setShifts(LongStream.range(0, ChronoUnit.DAYS.between(date1, date2))
@@ -35,7 +35,7 @@ public class JobService {
                 .map(date -> Shift.builder()
                         .id(UUID.randomUUID())
                         .job(job)
-                        .startTime(date.atTime(8, 0, 0).toInstant(ZoneOffset.UTC))
+                        .startTime(date.atTime(9, 0, 0).toInstant(ZoneOffset.UTC))
                         .endTime(date.atTime(17, 0, 0).toInstant(ZoneOffset.UTC))
                         .build())
                 .collect(Collectors.toList()));
