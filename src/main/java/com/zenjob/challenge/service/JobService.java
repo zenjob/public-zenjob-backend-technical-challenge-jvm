@@ -25,6 +25,9 @@ public class JobService {
     private final ShiftRepository shiftRepository;
 
     public Job createJob(UUID uuid, UUID companyId, LocalDate date1, LocalDate date2) throws DateTimeException {
+        if (date1.isBefore(LocalDate.now())) {
+            throw new DateTimeException("Start date cannot be in the past.");
+        }
         if (ChronoUnit.DAYS.between(date1, date2) < 1) {
             throw new DateTimeException("End date must be at least 1 day after start date.");
         }
