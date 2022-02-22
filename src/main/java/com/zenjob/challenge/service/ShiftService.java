@@ -14,7 +14,6 @@ import java.util.UUID;
 @Repository
 @Transactional
 public class ShiftService {
-    private final JobRepository jobRepository;
     private final ShiftRepository shiftRepository;
 
     public List<Shift> getShifts(UUID id) {
