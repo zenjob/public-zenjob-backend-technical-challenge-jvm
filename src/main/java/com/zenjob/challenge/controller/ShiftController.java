@@ -33,7 +33,7 @@ public class ShiftController {
     public ResponseDto<GetShiftsResponse> getShifts(@PathVariable("jobId") UUID uuid) {
         List<ShiftResponse> shiftResponses = jobService.getShifts(uuid).stream()
                 .map(shift -> ShiftResponse.builder()
-                        .id(uuid)
+                        .id(shift.getId())
                         .talentId(shift.getTalentId())
                         .jobId(shift.getJob().getId())
                         .start(shift.getStartTime())
