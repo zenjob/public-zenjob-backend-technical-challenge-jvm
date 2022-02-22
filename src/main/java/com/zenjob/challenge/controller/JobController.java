@@ -19,10 +19,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(path = "/job")

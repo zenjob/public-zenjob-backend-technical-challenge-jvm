@@ -12,7 +12,6 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
@@ -47,14 +46,6 @@ public class JobService {
                         .build())
                 .collect(Collectors.toList()));
         return jobRepository.save(job);
-    }
-
-    public List<Shift> getShifts(UUID id) {
-        return shiftRepository.findAllByJob_Id(id);
-    }
-
-    public void bookTalent(UUID talent, UUID shiftId) {
-        shiftRepository.findById(shiftId).map(shift -> shiftRepository.save(shift.setTalentId(talent)));
     }
 
     public void cancelJob(UUID uuid) {
