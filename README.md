@@ -1,10 +1,6 @@
 # Zenjob Coding Challenge
 
-This is a **backend coding challenge**, containing **three different tasks**. For finishing these tasks with some documentation, you should not need to invest more than **2 hours**.
-
-## Introduction
-
-This repository consists of a simplified version of Zenjob's platform:
+This is a **backend coding challenge**, containing **three different tasks**. The repository consists of a simplified version of Zenjob's platform:
 
 - *Companies* can order *jobs*
 - Each *job* contains one or more *shifts*
