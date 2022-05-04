@@ -1,19 +1,12 @@
 package com.zenjob.challenge.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Version;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.Instant;
 import java.util.UUID;
@@ -21,13 +14,14 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
+@Getter
+@Setter
 @Accessors(chain = true)
 @EntityListeners(AuditingEntityListener.class)
 public class Shift {
-
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private UUID id;
 
     @Version
@@ -47,5 +41,4 @@ public class Shift {
 
     @LastModifiedDate
     private Instant updatedAt;
-
 }
