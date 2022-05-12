@@ -43,7 +43,7 @@ public class JobService {
     }
 
     public List<Shift> getShifts(UUID id) {
-        return shiftRepository.findAllByJob_Id(id);
+        return shiftRepository.findAllByJobId(id);
     }
 
     public void bookTalent(UUID talent, UUID shiftId) {
