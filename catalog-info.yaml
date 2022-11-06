@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: public-zenjob-backend-technical-challenge-jvm
+  description: public-zenjob-backend-technical-challenge-jvm
+  annotations:
+    github.com/project-slug: zenjob/public-zenjob-backend-technical-challenge-jvm
+    backstage.io/techdocs-ref: dir:.
+    grafana/tag-selector: public-zenjob-backend-technical-challenge-jvm
+spec:
+  type: service
+  owner: group-p-and-e
+  lifecycle: production

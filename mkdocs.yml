@@ -1,0 +1,11 @@
+site_name: public-zenjob-backend-technical-challenge-jvm
+site_description: public-zenjob-backend-technical-challenge-jvm
+
+nav:
+  - Introduction: index.md
+
+repo_url: "https://github.com/zenjob/public-zenjob-backend-technical-challenge-jvm"
+edit_uri: edit/main/docs/
+
+plugins:
+  - techdocs-core
